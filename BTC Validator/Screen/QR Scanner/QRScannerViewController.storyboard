@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qbc-ma-qpg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--BTC QR Scanner-->
+        <scene sceneID="zdI-Gk-GaM">
+            <objects>
+                <viewController id="cAe-HN-wf4" customClass="QRScannerViewController" customModule="QRScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8F0-T8-rF5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EKO-74-2a9">
+                                <rect key="frame" x="20" y="88" width="374" height="788"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Any QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-oK-GNr">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="lUH-8O-3c3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h75-cd-jzq" customClass="QRScannerView" customModule="QRScanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30.5" width="374" height="697.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fEY-wq-ddP">
+                                                <rect key="frame" x="61.5" y="221" width="251" height="256"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="251" id="4Pq-vZ-PSb"/>
+                                                    <constraint firstAttribute="width" secondItem="fEY-wq-ddP" secondAttribute="height" multiplier="1:1" id="BUU-Eg-Vb2"/>
+                                                </constraints>
+                                                <imageReference key="image" image="viewfinder" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                                    <hierarchicalColors>
+                                                        <color systemColor="systemPurpleColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstItem="fEY-wq-ddP" firstAttribute="centerX" secondItem="h75-cd-jzq" secondAttribute="centerX" id="qz1-5E-Ggp"/>
+                                            <constraint firstItem="fEY-wq-ddP" firstAttribute="centerY" secondItem="h75-cd-jzq" secondAttribute="centerY" id="wsb-BZ-BUB"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOs-Oa-MFF">
+                                        <rect key="frame" x="0.0" y="738" width="374" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Umh-5x-99M"/>
+                                        </constraints>
+                                        <state key="normal" title="Scan again">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scanButtonAction:" destination="cAe-HN-wf4" eventType="touchUpInside" id="Q3p-Pf-ZbY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="haU-FT-eZ7"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="EKO-74-2a9" secondAttribute="bottom" constant="20" id="49U-0z-NxY"/>
+                            <constraint firstItem="haU-FT-eZ7" firstAttribute="trailing" secondItem="EKO-74-2a9" secondAttribute="trailing" constant="20" id="fUl-ug-h9O"/>
+                            <constraint firstItem="EKO-74-2a9" firstAttribute="leading" secondItem="haU-FT-eZ7" secondAttribute="leading" constant="20" id="rtr-Ew-5G6"/>
+                            <constraint firstItem="EKO-74-2a9" firstAttribute="top" secondItem="haU-FT-eZ7" secondAttribute="top" id="uDO-cB-BGR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="BTC QR Scanner" largeTitleDisplayMode="always" id="z2l-ph-ZjC"/>
+                    <connections>
+                        <outlet property="scanButton" destination="sOs-Oa-MFF" id="LhB-cH-8C5"/>
+                        <outlet property="scannerView" destination="h75-cd-jzq" id="bs0-7S-tnp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdh-sa-zLG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.75362318840587" y="26.785714285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ERI-bc-ffF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qbc-ma-qpg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vhj-6a-XI9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cAe-HN-wf4" kind="relationship" relationship="rootViewController" id="OTo-Dw-d3b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ae-FR-Q26" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="viewfinder" catalog="system" width="128" height="115"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
